@@ -1,0 +1,14 @@
+{
+  "name": "jmgl-petrol-app",
+  "version": "1.0.0",
+  "description": "Sistema de Gestión de Inventario y Venta Controlada de Carburantes",
+  "scripts": {
+    "start": "node backend/server.js",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
