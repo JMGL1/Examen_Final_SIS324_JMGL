@@ -4,7 +4,7 @@
   "description": "Sistema de Gestión de Inventario y Venta Controlada de Carburantes",
   "scripts": {
     "start": "node backend/server.js",
-    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "install:all": "cd backend && npm install && npm rebuild sqlite3 --build-from-source && cd ../frontend && npm install",
     "build": "cd frontend && npm run build"
   },
   "dependencies": {},
