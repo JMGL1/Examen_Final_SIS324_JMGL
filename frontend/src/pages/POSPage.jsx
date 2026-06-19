@@ -12,7 +12,7 @@ export default function POSPage() {
 
   // Load tanks for the dropdown
   useEffect(() => {
-    fetch('http://localhost:3001/api/tanques')
+    fetch('/api/tanques')
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
@@ -28,7 +28,7 @@ export default function POSPage() {
     if (placa.length >= 3) {
       const delayDebounceFn = setTimeout(() => {
         setLoading(true);
-        fetch(`http://localhost:3001/api/ventas/limite/${placa}`)
+        fetch(`/api/ventas/limite/${placa}`)
           .then(res => res.json())
           .then(data => {
             if (data.error) throw new Error(data.error);
@@ -52,7 +52,7 @@ export default function POSPage() {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:3001/api/ventas', {
+      const response = await fetch('/api/ventas', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

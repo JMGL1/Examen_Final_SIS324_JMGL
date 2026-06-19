@@ -7,7 +7,7 @@ export default function SettingsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/empresa')
+    fetch('/api/empresa')
       .then(res => res.json())
       .then(data => {
         setEmpresa(data);
@@ -23,7 +23,7 @@ export default function SettingsPage() {
     e.preventDefault();
     setMensaje(null);
     try {
-      const response = await fetch('http://localhost:3001/api/empresa', {
+      const response = await fetch('/api/empresa', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

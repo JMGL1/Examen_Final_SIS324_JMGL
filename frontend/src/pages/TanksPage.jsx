@@ -7,7 +7,7 @@ export default function TanksPage() {
   const [mensaje, setMensaje] = useState(null);
 
   const cargarTanques = () => {
-    fetch('http://localhost:3001/api/tanques')
+    fetch('/api/tanques')
       .then(res => res.json())
       .then(data => {
         setTanques(data);
@@ -28,7 +28,7 @@ export default function TanksPage() {
     setMensaje(null);
 
     try {
-      const response = await fetch('http://localhost:3001/api/tanques/ingreso', {
+      const response = await fetch('/api/tanques/ingreso', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
